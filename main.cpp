@@ -64,4 +64,5 @@ void runEmployeeTests(Employee &e) {
   cout << "Final print():" << endl;
   e.print();
 
+  cout << "End of test... " << endl; 
 }
