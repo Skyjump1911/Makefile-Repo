@@ -3,25 +3,26 @@
 #Brief: This is the makefile for the Makefile assignment in CSCI325
 
 CXX = g++
-CXXFLAGS= -Wall -Wextra -g
+
+CXXFLAGS = -Wall -Wextra -g
 
 all: program
 
 program: main.o Supervisor.o Employee.o Officer.o
-$(CXX)$(CXXFLAGS) -o program main.o Supervisor.o Employee.o Officer.o
+	$(CXX) $(CXXFLAGS) -o program main.o Supervisor.o Employee.o Officer.o
 
 main.o: main.cpp Employee.h Supervisor.h Officer.h
-$(CXX)$(CXXFLAGS)-c main.cpp
+	$(CXX) $(CXXFLAGS) -c main.cpp
 
 Supervisor.o: Supervisor.cpp Supervisor.h Employee.h
-$(CXX)$(CXXFLAGS) -c Supervisor.cpp
+	$(CXX) $(CXXFLAGS) -c Supervisor.cpp
 
 Employee.o: Employee.cpp Employee.h
-$(CXX)$(CXXFLAGS) -c Employee.cpp
+	$(CXX) $(CXXFLAGS) -c Employee.cpp
 
 Officer.o: Officer.cpp Officer.h Employee.h
-$(CXX)$(CXXFLAGS) -c Officer.cpp
+	$(CXX) $(CXXFLAGS) -c Officer.cpp
 
 
 clean:
-rm -f*.o*~program
+	rm -f *.o *~ program
