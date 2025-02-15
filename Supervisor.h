@@ -3,7 +3,7 @@
 
 #include "Employee.h"
 
-class Supervisor : Public Employee {
+class Supervisor : public Employee {
 
 
  private:
